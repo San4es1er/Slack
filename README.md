@@ -1,1 +1,1 @@
-# Slack
+# Smack

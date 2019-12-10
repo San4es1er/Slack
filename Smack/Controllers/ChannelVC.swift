@@ -14,12 +14,10 @@ class ChannelVC: UIViewController {
     
 // MARK: - Outlets
     @IBOutlet weak var channelsTableView: UITableView!
+    @IBAction func prepareForUnwind(Segue: UIStoryboardSegue){}
     
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        print("will appear")
-    }
+// MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         print("OPANA")
@@ -31,6 +29,7 @@ class ChannelVC: UIViewController {
     
 
 }
+    
 
 extension ChannelVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

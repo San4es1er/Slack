@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVC: UIViewController {
 
     // MARK: - Outlets
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     
@@ -21,10 +22,20 @@ class LoginVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func loginButton(_ sender: Any) {
+        guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+            showAlert(message: .emptyFields)
+            return
+        }
+        FirebaseManager().signIn(email: email, password: password) { [weak self] (error) in
+            guard let error = error else {
+                return
+            }
+            self?.showAlert(message: .error(error))
+        }
         
     }
     @IBAction func registrationButton(_ sender: Any) {
-    performSegue(withIdentifier: REGISTRATION_VIEW_CONTROLLER, sender: nil)
+    performSegue(withIdentifier: TO_REGISTRATION_VC, sender: nil)
     }
     
     
@@ -33,6 +44,8 @@ class LoginVC: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+     
     }
     
 

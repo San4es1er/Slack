@@ -9,17 +9,24 @@
 /* Begin PBXBuildFile section */
 		1F60A3BA012E730BBF522262 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E481B5CF2A69B9F319C1A5 /* Pods_Smack.framework */; };
 		CE609214239E5A0F008C97B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE609213239E5A0F008C97B1 /* AppDelegate.swift */; };
-		CE609216239E5A0F008C97B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE609215239E5A0F008C97B1 /* SceneDelegate.swift */; };
 		CE60921B239E5A0F008C97B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE609219239E5A0F008C97B1 /* Main.storyboard */; };
 		CE60921D239E5A14008C97B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE60921C239E5A14008C97B1 /* Assets.xcassets */; };
 		CE609220239E5A14008C97B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE60921E239E5A14008C97B1 /* LaunchScreen.storyboard */; };
 		CE60922B239E6AE4008C97B1 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE609229239E6AE4008C97B1 /* SWRevealViewController.m */; };
-		CE60922E239E7377008C97B1 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60922D239E7377008C97B1 /* ChatVC.swift */; };
 		CE609230239E7463008C97B1 /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60922F239E7463008C97B1 /* ChannelVC.swift */; };
 		CE609233239E8DDD008C97B1 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE609232239E8DDD008C97B1 /* GradientView.swift */; };
 		CE609235239EB9AE008C97B1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE609234239EB9AE008C97B1 /* LoginVC.swift */; };
-		CE609237239FA6E4008C97B1 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE609236239FA6E4008C97B1 /* RegistrationViewController.swift */; };
+		CE609237239FA6E4008C97B1 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE609236239FA6E4008C97B1 /* RegistrationVC.swift */; };
 		CE60923A239FA92B008C97B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE609239239FA92B008C97B1 /* Constants.swift */; };
+		CE60923C239FCAE7008C97B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE60923B239FCAE7008C97B1 /* GoogleService-Info.plist */; };
+		CE60923F239FF08E008C97B1 /* ViewController + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60923E239FF08E008C97B1 /* ViewController + Ext.swift */; };
+		CE609242239FFCA4008C97B1 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE609241239FFCA4008C97B1 /* FirebaseManager.swift */; };
+		CEEAB2B623A0EBCA00FDF472 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB2B523A0EBCA00FDF472 /* Chat.swift */; };
+		CEEAB2B923A0ED2300FDF472 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB2B823A0ED2300FDF472 /* Message.swift */; };
+		CEEAB2BB23A0F30700FDF472 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB2BA23A0F30700FDF472 /* ChatVC.swift */; };
+		CEEAB2BF23A26D5300FDF472 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB2BE23A26D5300FDF472 /* User.swift */; };
+		CEEAB2C123A2758300FDF472 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB2C023A2758300FDF472 /* DataManager.swift */; };
+		CEEAB2C323A28D9200FDF472 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEAB2C223A28D9200FDF472 /* Auth.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +35,6 @@
 		C1012815B7B96C8DBED10E8A /* Pods-Smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.release.xcconfig"; path = "Target Support Files/Pods-Smack/Pods-Smack.release.xcconfig"; sourceTree = "<group>"; };
 		CE609210239E5A0F008C97B1 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE609213239E5A0F008C97B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE609215239E5A0F008C97B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE60921A239E5A0F008C97B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE60921C239E5A14008C97B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE60921F239E5A14008C97B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,12 +42,20 @@
 		CE609228239E6AE3008C97B1 /* Smack-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smack-Bridging-Header.h"; sourceTree = "<group>"; };
 		CE609229239E6AE4008C97B1 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		CE60922A239E6AE4008C97B1 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		CE60922D239E7377008C97B1 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		CE60922F239E7463008C97B1 /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		CE609232239E8DDD008C97B1 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		CE609234239EB9AE008C97B1 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		CE609236239FA6E4008C97B1 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		CE609236239FA6E4008C97B1 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		CE609239239FA92B008C97B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CE60923B239FCAE7008C97B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE60923E239FF08E008C97B1 /* ViewController + Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController + Ext.swift"; sourceTree = "<group>"; };
+		CE609241239FFCA4008C97B1 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		CEEAB2B523A0EBCA00FDF472 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		CEEAB2B823A0ED2300FDF472 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		CEEAB2BA23A0F30700FDF472 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		CEEAB2BE23A26D5300FDF472 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CEEAB2C023A2758300FDF472 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CEEAB2C223A28D9200FDF472 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,14 +109,18 @@
 			isa = PBXGroup;
 			children = (
 				CE609238239FA705008C97B1 /* Utilities */,
+				CE609219239E5A0F008C97B1 /* Main.storyboard */,
+				CEEAB2C223A28D9200FDF472 /* Auth.storyboard */,
+				CEEAB2B423A0EBA900FDF472 /* Models */,
+				CE609240239FF0B4008C97B1 /* Extensions */,
+				CE60923D239FF05C008C97B1 /* Managers */,
 				CE609227239E6A83008C97B1 /* Supporting Files */,
 				CE609231239E8DA6008C97B1 /* Views */,
 				CE60922C239E735C008C97B1 /* Controllers */,
 				CE609213239E5A0F008C97B1 /* AppDelegate.swift */,
-				CE609215239E5A0F008C97B1 /* SceneDelegate.swift */,
-				CE609219239E5A0F008C97B1 /* Main.storyboard */,
 				CE60921C239E5A14008C97B1 /* Assets.xcassets */,
 				CE60921E239E5A14008C97B1 /* LaunchScreen.storyboard */,
+				CE60923B239FCAE7008C97B1 /* GoogleService-Info.plist */,
 				CE609221239E5A14008C97B1 /* Info.plist */,
 			);
 			path = Smack;
@@ -121,10 +139,10 @@
 		CE60922C239E735C008C97B1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE60922D239E7377008C97B1 /* ChatVC.swift */,
+				CEEAB2BA23A0F30700FDF472 /* ChatVC.swift */,
 				CE60922F239E7463008C97B1 /* ChannelVC.swift */,
 				CE609234239EB9AE008C97B1 /* LoginVC.swift */,
-				CE609236239FA6E4008C97B1 /* RegistrationViewController.swift */,
+				CE609236239FA6E4008C97B1 /* RegistrationVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -143,6 +161,33 @@
 				CE609239239FA92B008C97B1 /* Constants.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CE60923D239FF05C008C97B1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CE609241239FFCA4008C97B1 /* FirebaseManager.swift */,
+				CEEAB2C023A2758300FDF472 /* DataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		CE609240239FF0B4008C97B1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE60923E239FF08E008C97B1 /* ViewController + Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CEEAB2B423A0EBA900FDF472 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEEAB2B523A0EBCA00FDF472 /* Chat.swift */,
+				CEEAB2B823A0ED2300FDF472 /* Message.swift */,
+				CEEAB2BE23A26D5300FDF472 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +253,9 @@
 			files = (
 				CE609220239E5A14008C97B1 /* LaunchScreen.storyboard in Resources */,
 				CE60921D239E5A14008C97B1 /* Assets.xcassets in Resources */,
+				CEEAB2C323A28D9200FDF472 /* Auth.storyboard in Resources */,
 				CE60921B239E5A0F008C97B1 /* Main.storyboard in Resources */,
+				CE60923C239FCAE7008C97B1 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,14 +308,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE60922E239E7377008C97B1 /* ChatVC.swift in Sources */,
+				CEEAB2B623A0EBCA00FDF472 /* Chat.swift in Sources */,
+				CEEAB2C123A2758300FDF472 /* DataManager.swift in Sources */,
 				CE609214239E5A0F008C97B1 /* AppDelegate.swift in Sources */,
-				CE609237239FA6E4008C97B1 /* RegistrationViewController.swift in Sources */,
+				CE609237239FA6E4008C97B1 /* RegistrationVC.swift in Sources */,
 				CE609235239EB9AE008C97B1 /* LoginVC.swift in Sources */,
 				CE609233239E8DDD008C97B1 /* GradientView.swift in Sources */,
-				CE609216239E5A0F008C97B1 /* SceneDelegate.swift in Sources */,
+				CEEAB2BF23A26D5300FDF472 /* User.swift in Sources */,
+				CE609242239FFCA4008C97B1 /* FirebaseManager.swift in Sources */,
 				CE60922B239E6AE4008C97B1 /* SWRevealViewController.m in Sources */,
+				CEEAB2B923A0ED2300FDF472 /* Message.swift in Sources */,
 				CE609230239E7463008C97B1 /* ChannelVC.swift in Sources */,
+				CE60923F239FF08E008C97B1 /* ViewController + Ext.swift in Sources */,
+				CEEAB2BB23A0F30700FDF472 /* ChatVC.swift in Sources */,
 				CE60923A239FA92B008C97B1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,58 @@
 
 import Foundation
 
-//ViewControllers
+//ViewControllersSegueID
 
-let REGISTRATION_VIEW_CONTROLLER = "RegistrationViewController"
+let TO_REGISTRATION_VC = "toRegistrationVC"
+let TO_LOGIN_VC = "toLoginVC"
 
+//Enums
+
+enum AlertMessagers {
+    case emptyFields
+    case error(_ error: Error)
+    
+    var discription: String{
+        switch self {
+        case .emptyFields:
+            return "Заполните все поля!"
+        case .error(let error):
+            return error.localizedDescription
+            
+            #warning("Why is this?")
+//        default:
+//            return "Что-то пошло не так"
+        }
+    }
+    
+    
+}
+
+enum Collections {
+    case Chats
+    case Users
+    
+    var discription: String{
+        switch self {
+        case .Chats:
+            return "Chats"
+        case .Users:
+            return "Users"
+        }
+    }
+}
+
+enum ResponseError: LocalizedError {
+    case internetNotAvailable
+    case unidentified
+    
+    var errorDescription: String? {
+        switch self {
+        case .internetNotAvailable:
+            return "Internet not available"
+        case .unidentified:
+            return "Unidentified error"
+        }
+        
+    }
+}

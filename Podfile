@@ -9,5 +9,12 @@ target 'Smack' do
  pod 'Alamofire'
  pod 'SwiftyJSON'
  pod 'Socket.IO-Client-Swift'
+ pod 'Firebase/Database'
+ pod 'Firebase/Auth'
+ pod 'Firebase/Firestore'
+ pod 'FirebaseInstanceID'
+ pod 'SDWebImage'
+ pod 'Firebase/Core'
+ pod 'MessageKit'
 
 end

@@ -14,8 +14,12 @@ class ChannelVC: UIViewController {
     
 // MARK: - Outlets
     @IBOutlet weak var channelsTableView: UITableView!
-    @IBAction func prepareForUnwind(Segue: UIStoryboardSegue){}
     
+ // MARK: - Actions
+    @IBAction func prepareForUnwind(Segue: UIStoryboardSegue){}
+    @IBAction func toLoginVCButton(_ sender: UIButton) {
+        performSegue(withIdentifier: TO_LOGIN_VC, sender: nil)
+    }
     
 // MARK: - Lifecycle
     override func viewDidLoad() {

@@ -27,6 +27,7 @@
 		CEEAB2BF23A26D5300FDF472 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB2BE23A26D5300FDF472 /* User.swift */; };
 		CEEAB2C123A2758300FDF472 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB2C023A2758300FDF472 /* DataManager.swift */; };
 		CEEAB2C323A28D9200FDF472 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEAB2C223A28D9200FDF472 /* Auth.storyboard */; };
+		CEEF395B23A2ACCC00DC35E7 /* UIWindow + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF395A23A2ACCC00DC35E7 /* UIWindow + Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		CEEAB2BE23A26D5300FDF472 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CEEAB2C023A2758300FDF472 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CEEAB2C223A28D9200FDF472 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		CEEF395A23A2ACCC00DC35E7 /* UIWindow + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				CE60923E239FF08E008C97B1 /* ViewController + Ext.swift */,
+				CEEF395A23A2ACCC00DC35E7 /* UIWindow + Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				CEEAB2C123A2758300FDF472 /* DataManager.swift in Sources */,
 				CE609214239E5A0F008C97B1 /* AppDelegate.swift in Sources */,
 				CE609237239FA6E4008C97B1 /* RegistrationVC.swift in Sources */,
+				CEEF395B23A2ACCC00DC35E7 /* UIWindow + Ext.swift in Sources */,
 				CE609235239EB9AE008C97B1 /* LoginVC.swift in Sources */,
 				CE609233239E8DDD008C97B1 /* GradientView.swift in Sources */,
 				CEEAB2BF23A26D5300FDF472 /* User.swift in Sources */,

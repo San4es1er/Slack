@@ -77,7 +77,7 @@ class FirebaseManager{
 
     func getUserData(completion: @escaping(Error?) -> Void){
         var uid = Auth.auth().currentUser?.uid
-        db.collection("User").document(uid!).getDocument { (documentSnapshot, error) in
+        db.collection("Users").document(uid!).getDocument { (documentSnapshot, error) in
             guard error == nil else{
                 completion(error)
                 return

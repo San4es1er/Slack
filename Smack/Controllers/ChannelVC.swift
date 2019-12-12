@@ -7,33 +7,43 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ChannelVC: UIViewController {
     
     
     
-// MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var channelsTableView: UITableView!
     
- // MARK: - Actions
-    @IBAction func prepareForUnwind(Segue: UIStoryboardSegue){}
-    @IBAction func toLoginVCButton(_ sender: UIButton) {
-        performSegue(withIdentifier: TO_LOGIN_VC, sender: nil)
+    @IBOutlet weak var profilePhoto: UIImageView!
+    @IBOutlet weak var profileButtonOutlet: UIButton!
+    // MARK: - Actions
+    @IBAction func profileButtonAction(_ sender: UIButton) {
     }
     
-// MARK: - Lifecycle
+    
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("OPANA")
         self.revealViewController()?.rearViewRevealWidth = self.view.frame.size.width - 60
         self.revealViewController()?.toggleAnimationDuration = 0.8
         channelsTableView.delegate = self
         channelsTableView.dataSource = self
+        profileButtonOutlet.setTitle(DataManager.shared.user?.userName, for: .normal)
+        print(DataManager.shared.user?.userName)
+        
+        if let photoLink = DataManager.shared.user?.userPhoto {
+            profilePhoto?.sd_setImage(with: URL(string: photoLink), completed: nil)
+        } else{
+            print("NP PHOTO")
+        }
     }
     
-
-}
     
+}
+
 
 extension ChannelVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,7 +54,7 @@ extension ChannelVC: UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = "TEST \(indexPath.row)"
         cell.backgroundColor = UIColor.clear
-
+        
         return cell
     }
     

@@ -16,6 +16,7 @@ class RegistrationVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userPhoto: UIImageView!
     
+
     // MARK: - Property
     let imagePicker = UIImagePickerController()
     
@@ -39,15 +40,17 @@ class RegistrationVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum
         self.present(imagePicker, animated: true, completion: nil)
     }
-    @IBAction func goBackButton(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
     
+    
+    @IBAction func goToAuthButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated:false)
         
     }
     // MARK: - Functions

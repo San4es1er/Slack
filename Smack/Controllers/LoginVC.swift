@@ -18,9 +18,7 @@ class LoginVC: UIViewController {
     
     
     // MARK: - Actions
-    @IBAction func goBackButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+   
     @IBAction func loginButton(_ sender: Any) {
         guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
             showAlert(message: .emptyFields)
@@ -34,17 +32,22 @@ class LoginVC: UIViewController {
         }
         
     }
-    @IBAction func registrationButton(_ sender: Any) {
-    performSegue(withIdentifier: TO_REGISTRATION_VC, sender: nil)
-    }
+  
     
+    @IBAction func goToRegButton(_ sender: UIButton) {
+        let vc: RegistrationVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(identifier: "RegistrationVC")
+//        vc.modalPresentationStyle = .formSheet
+//       navigationController?.present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
     
     
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+      print("authorisation")
      
     }
     

@@ -87,7 +87,7 @@ class ChatVC: UIViewController {
     @IBOutlet weak var menuButtonOutlet: UIButton!
     var db = Firestore.firestore()
     var currentUser = Auth.auth().currentUser!
-    var chats = ["asddsa"]
+    var chats = [String]()
     @IBOutlet weak var chatTableView: UITableView!
     
     
@@ -101,26 +101,30 @@ class ChatVC: UIViewController {
         
         menuButtonOutlet.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         print(currentUser.email)
-        var chatsCollectionRef = db.collection("Chats")
-        chatsCollectionRef.whereField("users", arrayContains: Auth.auth().currentUser?.uid ?? "")
-            .getDocuments { (chatQuerySnap, error) in
-                if let error = error {
-                    print(error)
-                } else{
-                    for value in chatQuerySnap!.documents{
-                        self.chats = value.data()["users"] as! [String]
-                        print(self.chats)
-                        self.chatTableView.reloadData()
-                    }
-                    
-                    
-                }
-        }
+        loadChats()
+ 
         
         
         
         
         // Do any additional setup after loading the view.
+    }
+    func loadChats(){
+        let chatsCollectionRef = db.collection("Chats")
+         chatsCollectionRef.whereField("users", arrayContains: Auth.auth().currentUser?.uid ?? "")
+             .getDocuments { (chatQuerySnap, error) in
+                 if let error = error {
+                     print(error)
+                 } else{
+                     for value in chatQuerySnap!.documents{
+                         self.chats = value.data()["users"] as! [String]
+                         print(self.chats)
+                         self.chatTableView.reloadData()
+                     }
+                     
+                     
+                 }
+         }
     }
 }
 

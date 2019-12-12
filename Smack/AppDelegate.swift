@@ -16,10 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-       let vc: LoginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "LoginVC")
-       self.window?.rootViewController?.present(vc, animated: true, completion: nil)
+        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+            guard let self = self else { return }
+            if user == nil{
+                self.window?.showModalAuth()
+            }else{
+                FirebaseManager().getUserData { (error) in
+                    print("ERROR: - ", error)
+                }
+            }
+        }
         return true
     }
+    
 
 
 

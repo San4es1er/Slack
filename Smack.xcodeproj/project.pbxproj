@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F60A3BA012E730BBF522262 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E481B5CF2A69B9F319C1A5 /* Pods_Smack.framework */; };
+		CE4B35D623A3B09E002A7101 /* ProfileSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4B35D523A3B09E002A7101 /* ProfileSettingsViewController.swift */; };
 		CE609214239E5A0F008C97B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE609213239E5A0F008C97B1 /* AppDelegate.swift */; };
 		CE60921B239E5A0F008C97B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE609219239E5A0F008C97B1 /* Main.storyboard */; };
 		CE60921D239E5A14008C97B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE60921C239E5A14008C97B1 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		04CAA7A6526BFC35769C7B67 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 		78E481B5CF2A69B9F319C1A5 /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1012815B7B96C8DBED10E8A /* Pods-Smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.release.xcconfig"; path = "Target Support Files/Pods-Smack/Pods-Smack.release.xcconfig"; sourceTree = "<group>"; };
+		CE4B35D523A3B09E002A7101 /* ProfileSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSettingsViewController.swift; sourceTree = "<group>"; };
 		CE609210239E5A0F008C97B1 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE609213239E5A0F008C97B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE60921A239E5A0F008C97B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				CE60922F239E7463008C97B1 /* ChannelVC.swift */,
 				CE609234239EB9AE008C97B1 /* LoginVC.swift */,
 				CE609236239FA6E4008C97B1 /* RegistrationVC.swift */,
+				CE4B35D523A3B09E002A7101 /* ProfileSettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE609224239E5A14008C97B1 /* Build configuration list for PBXNativeTarget "Smack" */;
 			buildPhases = (
+				CE4B35D723A3C76E002A7101 /* ShellScript */,
 				AD223D66FBAABAEFF9925E06 /* [CP] Check Pods Manifest.lock */,
 				CE60920C239E5A0F008C97B1 /* Sources */,
 				CE60920D239E5A0F008C97B1 /* Frameworks */,
@@ -287,6 +291,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CE4B35D723A3C76E002A7101 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		CE75D97A94B1C95CA205E10A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +339,7 @@
 				CEEF395B23A2ACCC00DC35E7 /* UIWindow + Ext.swift in Sources */,
 				CE609235239EB9AE008C97B1 /* LoginVC.swift in Sources */,
 				CE609233239E8DDD008C97B1 /* GradientView.swift in Sources */,
+				CE4B35D623A3B09E002A7101 /* ProfileSettingsViewController.swift in Sources */,
 				CEEAB2BF23A26D5300FDF472 /* User.swift in Sources */,
 				CE609242239FFCA4008C97B1 /* FirebaseManager.swift in Sources */,
 				CE60922B239E6AE4008C97B1 /* SWRevealViewController.m in Sources */,

@@ -18,8 +18,12 @@ class ChannelVC: UIViewController {
     
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var profileButtonOutlet: UIButton!
+    
     // MARK: - Actions
     @IBAction func profileButtonAction(_ sender: UIButton) {
+        let vc: ProfileSettingsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProfileSettingsViewController")
+        self.present(vc, animated: true, completion: nil)
+    
     }
     
     
@@ -37,7 +41,7 @@ class ChannelVC: UIViewController {
         if let photoLink = DataManager.shared.user?.userPhoto {
             profilePhoto?.sd_setImage(with: URL(string: photoLink), completed: nil)
         } else{
-            print("NP PHOTO")
+            print("NO PHOTO")
         }
     }
     

@@ -16,5 +16,6 @@ target 'Smack' do
  pod 'SDWebImage'
  pod 'Firebase/Core'
  pod 'MessageKit'
+ pod 'SwiftLint'
 
 end

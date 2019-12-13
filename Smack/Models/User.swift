@@ -16,8 +16,7 @@ struct User {
     
     init(document: DocumentSnapshot ) {
         let data = document.data()
-        print(data?["userName"] as? String)
-        print("UUUUUUP")
+
         self.userName = data?["userName"] as? String ?? "No name"
         self.email = data?["email"] as? String ?? "No email"
         self.userPhoto = data?["userPhoto"] as? String ?? "No photo"

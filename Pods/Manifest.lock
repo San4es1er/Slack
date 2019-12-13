@@ -131,6 +131,7 @@ PODS:
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
+  - SwiftLint (0.38.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
@@ -143,6 +144,7 @@ DEPENDENCIES:
   - MessageKit
   - SDWebImage
   - Socket.IO-Client-Swift
+  - SwiftLint
   - SwiftyJSON
 
 SPEC REPOS:
@@ -174,6 +176,7 @@ SPEC REPOS:
     - SDWebImage
     - Socket.IO-Client-Swift
     - Starscream
+    - SwiftLint
     - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -204,8 +207,9 @@ SPEC CHECKSUMS:
   SDWebImage: 7137d57385fb632129838c1e6ab9528a22c666cc
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  SwiftLint: 4105f061f9812b214568b736dab580ab2c73a582
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 6bcf9b3dcc16f0c60f735a899546118fbd1f9439
+PODFILE CHECKSUM: f52824806638d471777810c3bb0387ce112c1b27
 
 COCOAPODS: 1.8.4

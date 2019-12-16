@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import Firebase
 
 class ChannelVC: UIViewController {
     
@@ -19,10 +20,17 @@ class ChannelVC: UIViewController {
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var profileButtonOutlet: UIButton!
     
+    @IBAction func TESTBUTTON(_ sender: UIButton) {
+        do {
+            try Auth.auth().signOut()
+        } catch{
+          
+        }
+    }
+    
     // MARK: - Actions
     @IBAction func profileButtonAction(_ sender: UIButton) {
-        let vc: ProfileSettingsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ProfileSettingsViewController")
-        self.present(vc, animated: true, completion: nil)
+
     
     }
     
@@ -36,7 +44,6 @@ class ChannelVC: UIViewController {
         channelsTableView.delegate = self
         channelsTableView.dataSource = self
         profileButtonOutlet.setTitle(DataManager.shared.user?.userName, for: .normal)
-        print(DataManager.shared.user?.userName)
         
         if let photoLink = DataManager.shared.user?.userPhoto {
             profilePhoto?.sd_setImage(with: URL(string: photoLink), completed: nil)

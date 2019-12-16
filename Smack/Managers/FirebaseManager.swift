@@ -30,22 +30,29 @@ class FirebaseManager{
                 guard error == nil else{
                     completion(error)
                     return }
-                createUser(email: email, username: username) { (Error) in
-                    completion(error)
+                createUser(email: email, username: username) { (error) in
+                    guard error == nil else{
+                        completion(error)
+                        return
+                    }
+                    FirebaseManager().getUserData { (error) in
+                        completion(error)
+                    }
                 }
             }
         }
         
-        func createUser(email: String, username: String, completion: @escaping(Error?) -> Void){            db.collection("Users").document(Auth.auth().currentUser!.uid).setData([
-                "username": username,
-                "email": email
-            ]){ err in
-                completion(err)
+        
+        func createUser(email: String, username: String, completion: @escaping(Error?) -> Void){            db.collection(Collections.Users.discription).document(Auth.auth().currentUser!.uid).setData([
+            User.Keys.userName.key: username,
+            User.Keys.email.key: email
+        ]){ error in
+            completion(error)
             }
         }
     }
     
-
+    
     
     func listenerForChats(watch: Collections, albums: @escaping (String) -> ()) {
         let albumsCollection = Firestore.firestore().collection(watch.discription)
@@ -58,25 +65,10 @@ class FirebaseManager{
         }
     }
     
-//   func getUserData(){
-//    var uid = Auth.auth().currentUser?.uid
-//       db.collection("User").getDocuments { (QuerySnapshot, error) in
-//           if let error = error {
-//               print("error")
-//           } else{
-//               QuerySnapshot!.documents.compactMap { (ElementOfResult) in
-//
-////                   massOfResults.append(ElementOfResult.data() as! [String: Any])
-//
-//               }
-//               print("success")
-//           }
-//       }
-//
-//   }
-
+    
+    
     func getUserData(completion: @escaping(Error?) -> Void){
-        var uid = Auth.auth().currentUser?.uid
+        let uid = Auth.auth().currentUser?.uid
         db.collection("Users").document(uid!).getDocument { (documentSnapshot, error) in
             guard error == nil else{
                 completion(error)

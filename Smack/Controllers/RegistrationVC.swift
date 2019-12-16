@@ -29,6 +29,8 @@ class RegistrationVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         FirebaseManager().registration(email: email, username: username, password: password) { [weak self] (error) in
             guard let error = error else {
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SWRevealViewController")
+                    self?.present(vc, animated: true, completion: nil)
                 return
             }
             self?.showAlert(message: .error(error))

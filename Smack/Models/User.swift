@@ -15,11 +15,24 @@ struct User {
     var userPhoto: String!
     
     init(document: DocumentSnapshot ) {
-        let data = document.data()
-
-        self.userName = data?["userName"] as? String ?? "No name"
-        self.email = data?["email"] as? String ?? "No email"
-        self.userPhoto = data?["userPhoto"] as? String ?? "No photo"
+        
+        guard let data = document.data() else{
+            print("Some problems with creating users data")
+            return
+        }
+        self.userName = data[Keys.userName.key] as? String ?? "No name"
+        self.email = data[Keys.email.key] as? String ?? "No email"
+        self.userPhoto = data[Keys.userPhoto.key] as? String ?? "No photo"
     }
 }
 
+extension User {
+    enum Keys: String {
+        case userName, email, userPhoto
+        
+        var key: String {
+            return rawValue
+        }
+    }
+
+}

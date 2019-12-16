@@ -86,7 +86,7 @@ class ChatVC: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var menuButtonOutlet: UIButton!
     var db = Firestore.firestore()
-    var currentUser = Auth.auth().currentUser!
+    var currentUser = Auth.auth().currentUser
     var chats = [String]()
     @IBOutlet weak var chatTableView: UITableView!
     
@@ -95,12 +95,14 @@ class ChatVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        FirebaseManager().getUserData { (error) in
+        }
+
         chatTableView.delegate = self
         chatTableView.dataSource = self
         
         menuButtonOutlet.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
-        print(currentUser.email)
         loadChats()
  
         

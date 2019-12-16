@@ -25,27 +25,18 @@ enum AlertMessagers {
             return "Заполните все поля!"
         case .error(let error):
             return error.localizedDescription
-            
-            #warning("Why is this?")
-//        default:
-//            return "Что-то пошло не так"
         }
     }
     
     
 }
 
-enum Collections {
+enum Collections: String {
     case Chats
     case Users
     
     var discription: String{
-        switch self {
-        case .Chats:
-            return "Chats"
-        case .Users:
-            return "Users"
-        }
+        return rawValue
     }
 }
 

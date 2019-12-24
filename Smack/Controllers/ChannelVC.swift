@@ -30,8 +30,8 @@ class ChannelVC: UIViewController {
     
     // MARK: - Actions
     @IBAction func profileButtonAction(_ sender: UIButton) {
-
-    
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ProfileSettingsViewController")
+        show(vc, sender: nil)
     }
     
     

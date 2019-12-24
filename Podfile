@@ -17,5 +17,6 @@ target 'Smack' do
  pod 'Firebase/Core'
  pod 'MessageKit'
  pod 'SwiftLint'
-
+ pod 'Firebase/Storage'
+ pod 'SnapKit'
 end

@@ -14,8 +14,5 @@ class DataManager {
     var user: User?
     
     private init(){
-        
     }
-        
-    
 }

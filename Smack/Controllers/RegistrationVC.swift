@@ -22,20 +22,49 @@ class RegistrationVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: - Actions
     @IBAction func registrationButton(_ sender: UIButton) {
+        view.startBluring(style: .dark)
+        view.addActivityIndicator()
         guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty, let username = usernameTextField.text, !username.isEmpty else {
+            self.view.stopBluring()
             showAlert(message: .emptyFields)
             return
         }
-        
-        FirebaseManager().registration(email: email, username: username, password: password) { [weak self] (error) in
+        FirebaseManager().registration(email: email, username: username, password: password, avatar: userPhoto.image) { [weak self] (error) in
+            self?.view.stopBluring()
+            print("ERROR", error?.localizedDescription)
             guard let error = error else {
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SWRevealViewController")
-                    self?.present(vc, animated: true, completion: nil)
+                self?.present(vc, animated: true, completion: nil)
+             
                 return
             }
             self?.showAlert(message: .error(error))
         }
     }
+    
+    
+    
+    
+    @IBAction func TESTUPLOAD(_ sender: UIButton) {
+        FirebaseManager().uploadAvatar(avatar: userPhoto.image, completion: { result in
+            switch result {
+            case .failure(let err):
+                self.showAlert(message: .error(err))
+            case .success(let url):
+                print("loh")
+                
+            }
+        })
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     @IBAction func chengePhotoButton(_ sender: UIButton) {
         imagePicker.delegate = self

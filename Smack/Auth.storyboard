@@ -175,6 +175,14 @@
                                     <action selector="goToAuthButton:" destination="jxZ-FL-mCY" eventType="touchUpInside" id="f5S-IS-lat"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eID-JV-Ohv">
+                                <rect key="frame" x="149" y="668" width="117" height="88"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="UPLOAD"/>
+                                <connections>
+                                    <action selector="TESTUPLOAD:" destination="jxZ-FL-mCY" eventType="touchUpInside" id="7G2-v1-FW1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -215,7 +223,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHt-S5-pi8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="sFs-TL-1kn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2712" y="-747"/>
+            <point key="canvasLocation" x="2711.594202898551" y="-747.32142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3cY-QY-r4Z">

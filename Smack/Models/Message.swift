@@ -13,11 +13,11 @@ import MessageKit
 
 struct Message {
     
-    var id: String
-    var content: String
-    var created: Timestamp
-    var senderID: String
-    var senderName: String
+    var id: String!
+    var content: String!
+    var created: Timestamp!
+    var senderID: String!
+    var senderName: String!
     
     var dictionary: [String: Any] {
         
@@ -32,16 +32,15 @@ struct Message {
 }
 
 extension Message {
-    init?(dictionary: [String: Any]) {
+    init(dictionary: [String: Any]) {
+            self.id = dictionary["id"] as? String ?? ""
+            self.content = dictionary["content"] as? String ?? ""
+            self.created = dictionary["created"] as? Timestamp
+            self.senderID = dictionary["senderID"] as? String ?? ""
+            self.senderName = dictionary["senderName"] as? String ?? ""
+           
         
-        guard let id = dictionary["id"] as? String,
-            let content = dictionary["content"] as? String,
-            let created = dictionary["created"] as? Timestamp,
-            let senderID = dictionary["senderID"] as? String,
-            let senderName = dictionary["senderName"] as? String
-            else {return nil}
-        
-        self.init(id: id, content: content, created: created, senderID: senderID, senderName:senderName)
+
         
     }
 }

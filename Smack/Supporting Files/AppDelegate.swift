@@ -22,12 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }else{
             self.window?.showModalAuth()
         }
-//        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
-//            guard let self = self else { return }
-//            if user == nil{
-//                self.window?.showModalAuth()
-//            }
-//        }
+        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+            guard let self = self else { return }
+            if user == nil{
+                self.window?.showModalAuth()
+            }
+        }
         return true
     }
 }

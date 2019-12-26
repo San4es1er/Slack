@@ -20,13 +20,7 @@ class ChannelVC: UIViewController {
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var profileButtonOutlet: UIButton!
     
-    @IBAction func TESTBUTTON(_ sender: UIButton) {
-        do {
-            try Auth.auth().signOut()
-        } catch{
-          
-        }
-    }
+ 
     
     // MARK: - Actions
     @IBAction func profileButtonAction(_ sender: UIButton) {

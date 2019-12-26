@@ -49,6 +49,7 @@ extension Message: MessageType {
     
     var sender: SenderType {
         return Sender(id: senderID, displayName: senderName)
+        
     }
     
     var messageId: String {

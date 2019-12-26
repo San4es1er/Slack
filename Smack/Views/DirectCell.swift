@@ -35,9 +35,9 @@ class DirectCell: UITableViewCell {
     }
     
     func setup(chat: Chat){
-        var companionID = chat.companionId
+        let companionID = chat.companionId
         var link: String?
-        var message: Message
+        var message: Message = chat.messages.last!
         var companion: User?
         
         db.collection("Users").document(companionID!).getDocument { (user, error) in
@@ -45,7 +45,14 @@ class DirectCell: UITableViewCell {
             companion = User(document: user)
             link = companion!.userPhoto!
             self.avatarImage.sd_setImage(with: URL(string: link!), completed: nil)
+               
         }
+        self.senderNameLabel.text = message.senderName
+        self.messageBodyLabel.text = message.content
+        var dateFormater = DateFormatter()
+        dateFormater.dateFormat = "MM-dd-yyyy HH:mm"
+        
+        self.messageDateLabel.text = "12:42"
         
         
         

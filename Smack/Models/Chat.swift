@@ -16,6 +16,8 @@ struct Chat {
     var companionId: String? {
         return users.filter { $0 != Auth.auth().currentUser?.uid}.first
     }
+    var companionAvatarLink: String?
+    
     var messages: [Message] //all messeges
     var referense: DocumentReference //Referense to the room with messeges and users
     

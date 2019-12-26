@@ -54,6 +54,7 @@ class DirectVC: UIViewController {
                     for mes in sd!.documents{
                         massOfMes.append(Message(dictionary: mes.data()))
                     }
+                    
                     let dialog = Chat(dictionary: doc.data(), mes: massOfMes, ref: doc.reference)
                     self.chat.append(dialog!)
                     print("NOW")
@@ -70,6 +71,7 @@ class DirectVC: UIViewController {
 }
    // MARK: - Extensions
 extension DirectVC: UITableViewDelegate, UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chat.count
     }
@@ -82,5 +84,13 @@ extension DirectVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ChatVC") as? ChatVC
+        vc?.setUsers(chat: chat[indexPath.row])
+        show(vc!, sender: nil)
+        
+        
     }
 }

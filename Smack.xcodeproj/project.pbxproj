@@ -31,6 +31,7 @@
 		CEEAB2BF23A26D5300FDF472 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB2BE23A26D5300FDF472 /* User.swift */; };
 		CEEAB2C123A2758300FDF472 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEAB2C023A2758300FDF472 /* DataManager.swift */; };
 		CEEAB2C323A28D9200FDF472 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEEAB2C223A28D9200FDF472 /* Auth.storyboard */; };
+		CEEF06EF23B2505B0048B074 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF06EE23B2505B0048B074 /* ChatVC.swift */; };
 		CEEF395B23A2ACCC00DC35E7 /* UIWindow + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEF395A23A2ACCC00DC35E7 /* UIWindow + Ext.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		CEEAB2BE23A26D5300FDF472 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CEEAB2C023A2758300FDF472 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CEEAB2C223A28D9200FDF472 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		CEEF06EE23B2505B0048B074 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		CEEF395A23A2ACCC00DC35E7 /* UIWindow + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,18 +121,12 @@
 			isa = PBXGroup;
 			children = (
 				CE609238239FA705008C97B1 /* Utilities */,
-				CE609219239E5A0F008C97B1 /* Main.storyboard */,
-				CEEAB2C223A28D9200FDF472 /* Auth.storyboard */,
-				CEEAB2B423A0EBA900FDF472 /* Models */,
 				CE609240239FF0B4008C97B1 /* Extensions */,
 				CE60923D239FF05C008C97B1 /* Managers */,
 				CE609227239E6A83008C97B1 /* Supporting Files */,
+				CEEAB2B423A0EBA900FDF472 /* Models */,
 				CE609231239E8DA6008C97B1 /* Views */,
 				CE60922C239E735C008C97B1 /* Controllers */,
-				CE609213239E5A0F008C97B1 /* AppDelegate.swift */,
-				CE60921C239E5A14008C97B1 /* Assets.xcassets */,
-				CE60921E239E5A14008C97B1 /* LaunchScreen.storyboard */,
-				CE60923B239FCAE7008C97B1 /* GoogleService-Info.plist */,
 				CE609221239E5A14008C97B1 /* Info.plist */,
 			);
 			path = Smack;
@@ -142,6 +138,10 @@
 				CE60922A239E6AE4008C97B1 /* SWRevealViewController.h */,
 				CE609229239E6AE4008C97B1 /* SWRevealViewController.m */,
 				CE609228239E6AE3008C97B1 /* Smack-Bridging-Header.h */,
+				CE609213239E5A0F008C97B1 /* AppDelegate.swift */,
+				CE60921C239E5A14008C97B1 /* Assets.xcassets */,
+				CE60921E239E5A14008C97B1 /* LaunchScreen.storyboard */,
+				CE60923B239FCAE7008C97B1 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -149,12 +149,13 @@
 		CE60922C239E735C008C97B1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEEBA8EE23B50B0800C3C4C3 /* Auth\Reg */,
 				CEEAB2BA23A0F30700FDF472 /* DirectVC.swift */,
+				CEEF06EE23B2505B0048B074 /* ChatVC.swift */,
 				CE60922F239E7463008C97B1 /* ChannelVC.swift */,
-				CE609234239EB9AE008C97B1 /* LoginVC.swift */,
 				CEABE5BF23ACEAA1000F075F /* testViewController.swift */,
-				CE609236239FA6E4008C97B1 /* RegistrationVC.swift */,
 				CE9DD82D23A8D1FC009629A7 /* ProfileSettingsViewController.swift */,
+				CE609219239E5A0F008C97B1 /* Main.storyboard */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -203,6 +204,16 @@
 				CEEAB2BE23A26D5300FDF472 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CEEBA8EE23B50B0800C3C4C3 /* Auth\Reg */ = {
+			isa = PBXGroup;
+			children = (
+				CE609234239EB9AE008C97B1 /* LoginVC.swift */,
+				CE609236239FA6E4008C97B1 /* RegistrationVC.swift */,
+				CEEAB2C223A28D9200FDF472 /* Auth.storyboard */,
+			);
+			path = "Auth\\Reg";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +357,7 @@
 				CEEAB2C123A2758300FDF472 /* DataManager.swift in Sources */,
 				CE609214239E5A0F008C97B1 /* AppDelegate.swift in Sources */,
 				CEABE5BE23ACD9F0000F075F /* UIView + Ext.swift in Sources */,
+				CEEF06EF23B2505B0048B074 /* ChatVC.swift in Sources */,
 				CE609237239FA6E4008C97B1 /* RegistrationVC.swift in Sources */,
 				CEEF395B23A2ACCC00DC35E7 /* UIWindow + Ext.swift in Sources */,
 				CE609235239EB9AE008C97B1 /* LoginVC.swift in Sources */,

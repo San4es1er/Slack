@@ -23,12 +23,11 @@ enum AlertMessagers {
         switch self {
         case .emptyFields:
             return "Заполните все поля!"
+       
         case .error(let error):
             return error.localizedDescription
         }
     }
-    
-    
 }
 
 enum Collections: String {
@@ -43,14 +42,19 @@ enum Collections: String {
 enum ResponseError: LocalizedError {
     case internetNotAvailable
     case unidentified
+    case friendAlreadyExist
+    case addSelf
     
     var errorDescription: String? {
         switch self {
         case .internetNotAvailable:
             return "Internet not available"
+        case .friendAlreadyExist:
+        return "Пользователь уже есть в списке Ваших друзей"
+        case .addSelf:
+            return "Как такое может в голову прийти?"
         case .unidentified:
             return "Unidentified error"
         }
-        
     }
 }

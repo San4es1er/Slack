@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 
 struct User {
+    
     var userName: String!
     var email: String!
     var userPhoto: String!

@@ -16,7 +16,6 @@ class RegistrationVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userPhoto: UIImageView!
     
-
     // MARK: - Property
     let imagePicker = UIImagePickerController()
     
@@ -31,40 +30,15 @@ class RegistrationVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         FirebaseManager().registration(email: email, username: username, password: password, avatar: userPhoto.image) { [weak self] (error) in
             self?.view.stopBluring()
-            print("ERROR", error?.localizedDescription)
             guard let error = error else {
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SWRevealViewController")
                 self?.present(vc, animated: true, completion: nil)
-             
+                
                 return
             }
             self?.showAlert(message: .error(error))
         }
     }
-    
-    
-    
-    
-    @IBAction func TESTUPLOAD(_ sender: UIButton) {
-        FirebaseManager().uploadAvatar(avatar: userPhoto.image, completion: { result in
-            switch result {
-            case .failure(let err):
-                self.showAlert(message: .error(err))
-            case .success(let url):
-                print("loh")
-                
-            }
-        })
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
     
     @IBAction func chengePhotoButton(_ sender: UIButton) {
         imagePicker.delegate = self
@@ -84,12 +58,11 @@ class RegistrationVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.navigationItem.setHidesBackButton(true, animated:false)
         
     }
-    // MARK: - Functions
     
+    // MARK: - Functions
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             userPhoto.image = image
-            
         }
         dismiss(animated: true, completion: nil)
     }

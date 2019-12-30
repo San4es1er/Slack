@@ -19,4 +19,6 @@ target 'Smack' do
  pod 'SwiftLint'
  pod 'Firebase/Storage'
  pod 'SnapKit'
+ pod 'QRCodeReader.swift'
+ pod 'QRCode'
 end

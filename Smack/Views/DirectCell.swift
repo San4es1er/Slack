@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 import Firebase
-
+#warning("передалать к хуям")
 class DirectCell: UITableViewCell {
     
     // MARK: - Outlets
@@ -42,12 +42,14 @@ class DirectCell: UITableViewCell {
         
         db.collection("Users").document(companionID!).getDocument { (user, error) in
             guard let user = user else { return }
+            
             companion = User(document: user)
+             self.senderNameLabel.text = companion?.userName
             link = companion!.userPhoto!
             self.avatarImage.sd_setImage(with: URL(string: link!), completed: nil)
                
         }
-        self.senderNameLabel.text = message.senderName
+       
         self.messageBodyLabel.text = message.content
         var dateFormater = DateFormatter()
         dateFormater.dateFormat = "MM-dd-yyyy HH:mm"

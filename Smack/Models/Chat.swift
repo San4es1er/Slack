@@ -11,13 +11,13 @@ import UIKit
 import Firebase
 
 struct Chat {
-    
+    var id: String?
     var users: [String]
     var companionId: String? {
         return users.filter { $0 != Auth.auth().currentUser?.uid}.first
     }
     var companionAvatarLink: String?
-    
+    var name: String?
     var messages: [Message] //all messeges
     var referense: DocumentReference //Referense to the room with messeges and users
     

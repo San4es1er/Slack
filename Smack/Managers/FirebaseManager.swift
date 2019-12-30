@@ -9,10 +9,11 @@
 import Foundation
 import Alamofire
 import Firebase
+import FirebaseFirestore
 
-
-
-class FirebaseManager{
+#warning("передалать к хуям")
+class FirebaseManager {
+    
     let db = Firestore.firestore()
     
     func signIn(email: String, password: String, completion: @escaping(Error?) -> Void ){
@@ -47,15 +48,15 @@ class FirebaseManager{
     
     
     
-//    func listenerForChats(watch: Collections, albums: @escaping (String) -> ()) {
-//        let albumsCollection = Firestore.firestore().collection(watch.discription)
-//        albumsCollection.addSnapshotListener { query, error in
-//            DispatchQueue.main.async {
-//                #warning("Add code after make chat cell")
-//                albums("CHECK")
-//            }
-//        }
-//    }
+    //    func listenerForChats(watch: Collections, albums: @escaping (String) -> ()) {
+    //        let albumsCollection = Firestore.firestore().collection(watch.discription)
+    //        albumsCollection.addSnapshotListener { query, error in
+    //            DispatchQueue.main.async {
+    //                #warning("Add code after make chat cell")
+    //                albums("CHECK")
+    //            }
+    //        }
+    //    }
     
     func createUser(email: String, username: String, url: String, completion: @escaping(Error?) -> Void){            db.collection(Collections.Users.discription)
         .document(Auth.auth().currentUser!.uid)
@@ -65,24 +66,24 @@ class FirebaseManager{
             User.Keys.userPhoto.key: url
         ]){ error in
             completion(error)
-            }
         }
+    }
     func getUserData(completion: @escaping(Error?) -> Void){
         let uid = Auth.auth().currentUser?.uid
         db.collection(Collections.Users.discription)
             .document(uid!)
             .getDocument { (documentSnapshot, error) in
-            guard error == nil else{
-                completion(error)
-                return
-            }
-            guard let document = documentSnapshot else{
-                completion(ResponseError.unidentified)
-                return
-            }
-            let user = User(document: document)
-            DataManager.shared.user = user
-            completion(nil)
+                guard error == nil else{
+                    completion(error)
+                    return
+                }
+                guard let document = documentSnapshot else{
+                    completion(ResponseError.unidentified)
+                    return
+                }
+                let user = User(document: document)
+                DataManager.shared.user = user
+                completion(nil)
         }
     }
     func uploadAvatar(avatar: UIImage?, completion: @escaping(Result<String>) -> Void) {
@@ -111,38 +112,77 @@ class FirebaseManager{
     func sendMessage(user2UID: String){
         let users = [Auth.auth().currentUser?.uid, user2UID]
         let data: [String: Any] = [
-        "users":users
+            "users":users
         ]
         var mes = Message(id: "132", content: "HELLO", created: Timestamp.init(seconds: 21, nanoseconds: 12), senderID: Auth.auth().currentUser!.uid, senderName: "Alex")
         var randomID = UUID().uuidString
-      
-//        db.collection(Collections.Chats.discription).document("vgvyt").collection.addDocument(data: mes.dictionary )
+        
+        //        db.collection(Collections.Chats.discription).document("vgvyt").collection.addDocument(data: mes.dictionary )
         
         
     }
-    // MARK: - ???????????????????????????????????????????????????????????????
-//    // Data in memory
-//    let data = Data()
-//
-//    // Create a reference to the file you want to upload
-//    let riversRef = storageRef.child("images/rivers.jpg")
-//
-//    // Upload the file to the path "images/rivers.jpg"
-//    let uploadTask = riversRef.putData(data, metadata: nil) { (metadata, error) in
-//        guard let metadata = metadata else {
-//            // Uh-oh, an error occurred!
-//            return
-//        }
-//        // Metadata contains file metadata such as size, content-type.
-//        let size = metadata.size
-//        // You can also access to download URL after upload.
-//        riversRef.downloadURL { (url, error) in
-//            guard let downloadURL = url else {
-//                // Uh-oh, an error occurred!
-//                return
-//            }
-//        }
-//    }
-    // MARK: - ???????????????????????????????????????????????????????????????
+    
+    // DELETE>
+    func returnFriends(id: String, completion: @escaping(String?) -> Void) {
+        db.collection(Collections.Users.discription)
+            .document(id)
+            .getDocument { (document, error) in
+                guard error == nil else{
+                    completion(nil)
+                    return
+                }
+                guard let friend = document else{
+                    return
+                }
+                var userName = friend[User.Keys.userName.key] as? String ?? "No name"
+                completion(userName)
+                
+        }
+    }
+    
+    func returnModel(id: String, completion: @escaping (Result<User?>) -> Void) {
+        db.collection(Collections.Users.discription)
+            .document(id)
+            .getDocument { (document, error) in
+                guard error == nil else{
+                    completion(.failure(error!))
+                    return
+                }
+                guard let document = document else {
+                    completion(.failure(ResponseError.unidentified))
+                    return
+                }
+                let friend = User(document: document)
+                completion(.success(friend))
+        }
+    }
+    
+    func addFriend(uid: String, completion: @escaping (Error?) -> Void) {
+        if uid == Auth.auth().currentUser?.uid{
+            completion(ResponseError.addSelf)
+            
+        }
+        db.collection(Collections.Users.discription).document(uid).getDocument { (ds, error) in
+            guard error == nil else {
+                completion(error)
+                return
+            }
+            
+            if DataManager.shared.user!.friends.contains(uid) {
+                 completion(ResponseError.friendAlreadyExist)
+            }
+         
+            if ds!.exists {
+                self.db.collection(Collections.Users.discription)
+                    .document(Auth.auth().currentUser!.uid)
+                    .updateData(["friends" : FieldValue.arrayUnion([uid])]) { (error) in
+                        if let error = error {
+                            completion(error)
+                        }
+                        completion(nil)
+                }
+            }
+        }
+    }
 }
 

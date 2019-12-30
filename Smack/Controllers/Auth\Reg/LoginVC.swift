@@ -15,29 +15,12 @@ class LoginVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
-    
     // MARK: - Actions
-    
     @IBAction func loginButton(_ sender: Any) {
         guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
             showAlert(message: .emptyFields)
             return
         }
-//        FirebaseManager().signIn(email: email, password: password) { [weak self] (error) in
-//            guard let error = error else {
-//
-//                FirebaseManager().getUserData { (error) in
-//                    if let error = error{
-//                        self?.showAlert(message: .error(error))
-//                    }
-//                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SWRevealViewController")
-//                    self?.present(vc, animated: true, completion: nil)
-//                }
-//                return
-//            }
-//            self?.showAlert(message: .error(error))
-//        }
         FirebaseManager().signIn(email: email, password: password) { [weak self] (error) in
             if let error = error{
                 self?.showAlert(message: .error(error))
@@ -51,12 +34,8 @@ class LoginVC: UIViewController {
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SWRevealViewController")
                 self?.present(vc, animated: true, completion: nil)
             }
+        }
     }
-    }
-        
-        
-        
-        
     
     @IBAction func goToRegButton(_ sender: UIButton) {
         let vc: RegistrationVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(identifier: "RegistrationVC")
@@ -64,15 +43,11 @@ class LoginVC: UIViewController {
         
     }
     
-    
-    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-      print("authorisation")
-     
     }
     
-
-  
+    
+    
 }

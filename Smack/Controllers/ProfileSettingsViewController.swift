@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import Firebase
+import QRCode
 
 class ProfileSettingsViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class ProfileSettingsViewController: UIViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var nameTextFieldOutlet: UITextField!
     @IBOutlet weak var emailTextFieldOutlet: UITextField!
+    @IBOutlet weak var QRCodeImage: UIImageView!
     
     
 
@@ -51,6 +53,7 @@ class ProfileSettingsViewController: UIViewController {
          } else{
              print("NO PHOTO")
          }
+        QRCodeImage.image = QRCode(Auth.auth().currentUser!.uid)?.image
         nameTextFieldOutlet.text = DataManager.shared.user?.userName
         emailTextFieldOutlet.text = DataManager.shared.user?.email
     }
